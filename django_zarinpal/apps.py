@@ -1,6 +1,4 @@
-# multipay/apps.py
 from django.apps import AppConfig
-
 
 class MultipayConfig(AppConfig):
     name = "zarinpal"
