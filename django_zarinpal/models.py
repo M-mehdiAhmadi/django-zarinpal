@@ -12,6 +12,9 @@ class Transaction(models.Model):
 
     amount = models.PositiveBigIntegerField(_("Amount"))
     authority = models.CharField(_("Authority"), max_length=64, null=True, blank=True, db_index=True)
+    description = models.TextField(verbose_name=_("description"))
+    mobile = models.CharField(verbose_name=_("mobile phone"),max_length=15)
+    email = models.EmailField(verbose_name=_("Email"))
     ref_id = models.CharField(_("Reference ID"), max_length=255, null=True, blank=True, db_index=True)
     status = models.PositiveSmallIntegerField(
         _("Status"), choices=TransactionStatus.choices, default=TransactionStatus.PENDING
@@ -19,6 +22,7 @@ class Transaction(models.Model):
     created_at = models.DateTimeField(_("request time"),auto_now_add=True)
     verified_at = models.DateTimeField(_("Verified At"), null=True, blank=True)
 
+    
     class Meta:
         verbose_name = _("Transaction")
         verbose_name_plural = _("Transactions")
