@@ -6,7 +6,7 @@ class TransactionForm(forms.ModelForm):
         model = Transaction
         fields = [
             "amount",      # user can set
-            "description", # optional (or auto-filled)
+            "description", # optional
             "email",       # optional
             "mobile",      # optional
         ]
