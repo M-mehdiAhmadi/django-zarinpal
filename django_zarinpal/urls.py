@@ -4,7 +4,7 @@ from . import views
 app_name = "zarinpal"
 
 urlpatterns = [
-    path("payment-request/<int:pk>/", views.payment_request, name="payment_request"),
-    path("payment-verify/", views.payment_verify, name="payment_verify"),
+    path("payment-request/<int:pk>/", views.PaymentRequestView.as_view(), name="payment_request"),
+    path("payment-verify/", views.PaymentVerifyView.as_view(), name="payment_verify"),
 ]
 
