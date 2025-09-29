@@ -42,4 +42,5 @@ class Transaction(models.Model):
         return self.to_jalali(self.verified_at)
     
     def get_verified_at_jalali_display(self):
-        return self.verified_at_jalali.strftime("%Y/%m/%d %H:%M:%S")
+        return self.verified_at_jalali.strftime("%Y/%m/%d %H:%M:%S") if self.verified_at_jalali else "-"
+
