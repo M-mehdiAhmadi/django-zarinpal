@@ -9,14 +9,7 @@ class TransactionStatus(models.IntegerChoices):
 
 
 class Transaction(models.Model):
-    STATUS_PENDING = 0
-    STATUS_PAID = 1
-    STATUS_FAILED = 2
-    STATUS_CHOICES = [
-        (STATUS_PENDING, _("Pending")),
-        (STATUS_PAID, _("Paid")),
-        (STATUS_FAILED, _("Failed")),
-    ]
+
     amount = models.PositiveBigIntegerField(_("Amount"))
     authority = models.CharField(_("Authority"), max_length=64, null=True, blank=True, db_index=True)
     ref_id = models.CharField(_("Reference ID"), max_length=255, null=True, blank=True, db_index=True)
